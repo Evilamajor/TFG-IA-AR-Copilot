@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+actor "Metge de família" as Doctor
+actor "Sistema IA local" as IA
+
+rectangle "Copilot AR" {
+    usecase "Rebre preguntes suggerides\nsegons el context clínic" as UC1
+    usecase "Consultar protocols mèdics" as UC2
+    usecase "Rebre recomanacions diagnòstiques" as UC3
+    usecase "Dictar ordres per veu" as UC4
+}
+
+Doctor --> UC1
+Doctor --> UC2
+Doctor --> UC3
+Doctor --> UC4
+
+IA --> UC3
+IA --> UC2
+
+@enduml

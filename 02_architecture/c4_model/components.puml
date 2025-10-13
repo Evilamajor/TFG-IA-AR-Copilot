@@ -1,0 +1,19 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container_Boundary(api, "API Backend") {
+    Component(router, "Orchestrator", "FastAPI Router", "Coordina els fluxos entre agents IA")
+    Component(agentM1, "Agent M1", "NLP", "Filtra intencions mèdiques")
+    Component(agentM2, "Agent M2", "RAG", "Consulta protocols i EHR")
+    Component(agentM3, "Agent M3", "LLM Local", "Genera preguntes suggerides")
+    Component(agentM4, "Agent M4", "Reconeixement de veu", "Transcriu ordres")
+    Component(agentM5, "Agent M5", "Orquestrador IA", "Decideix la millor acció")
+}
+
+Rel(router, agentM1, "Envia text")
+Rel(router, agentM2, "Consulta informació")
+Rel(router, agentM3, "Genera suggeriments")
+Rel(router, agentM4, "Processa veu")
+Rel(router, agentM5, "Orquestra")
+
+@enduml

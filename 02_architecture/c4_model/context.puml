@@ -1,0 +1,15 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_TOP_DOWN()
+
+Person(doctor, "Metge de família", "Professional sanitari que utilitza les ulleres AR")
+System(copilot, "Copilot IA AR", "Assistent intel·ligent local per suport clínic")
+System_Ext(protocols, "Base de protocols clínics", "Repositori mèdic extern")
+System_Ext(ehr, "Història clínica electrònica", "Sistema extern del centre de salut")
+
+Rel(doctor, copilot, "Interacciona amb")
+Rel(copilot, protocols, "Consulta protocols")
+Rel(copilot, ehr, "Consulta informació de pacient")
+
+@enduml

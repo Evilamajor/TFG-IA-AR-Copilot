@@ -1,0 +1,21 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+System_Boundary(copilot, "Copilot IA AR") {
+    Container(ui, "Interfície AR", "React/Three.js", "Mostra la informació a les ulleres")
+    Container(api, "API Backend", "FastAPI", "Orquestra fluxos i agents")
+    Container(ia, "Motor IA local", "PyTorch + models open source", "Processament del llenguatge i suggeriments clínics")
+    Container(db, "Repositori local", "PostgreSQL", "Emmagatzematge temporal segur")
+}
+
+System_Ext(protocols, "Protocols mèdics")
+System_Ext(ehr, "Història clínica electrònica")
+
+Rel(ui, api, "Consulta i envia dades")
+Rel(api, ia, "Orquestració de models IA")
+Rel(api, db, "Lectura i escriptura")
+Rel(api, protocols, "Consulta")
+Rel(api, ehr, "Consulta")
+Rel(ui, ia, "Mostra suggeriments")
+
+@enduml
