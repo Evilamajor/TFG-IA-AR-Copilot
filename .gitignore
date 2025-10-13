@@ -1,1 +1,11 @@
-﻿07_documentation/export/
+﻿# Fitxers temporals
+*.log
+*.tmp
+
+# Config VSCode
+.vscode/
+
+# Build / outputs
+dist/
+build/
+__pycache__/
