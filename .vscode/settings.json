@@ -1,0 +1,9 @@
+﻿{
+  "plantuml.server": "",
+  "plantuml.render": "PlantUMLServer",
+  "plantuml.exportFormat": "png",
+  "plantuml.diagramsRoot": "C:\\models",
+  "plantuml.exportOutDir": "C:\\models\\07_documentation\\export",
+  "plantuml.serverUrl": "https://www.plantuml.com/plantuml",
+  "editor.formatOnSave": true
+}
